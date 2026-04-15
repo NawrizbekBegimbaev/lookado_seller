@@ -1,0 +1,111 @@
+{
+  "staging": {
+    "credentials": {
+      "email": "998001112233",
+      "password": "76543217"
+    },
+    "shop_name": "Zara"
+  },
+
+  "valid_product": {
+    "uz_name": "Test Mahsulot Nomi",
+    "ru_name": "Тестовый Продукт",
+    "uz_description": "Bu test mahsulot tavsifi yetarli uzunlikka ega bolishi kerak test uchun",
+    "ru_description": "Это описание тестового продукта достаточной длины для прохождения валидации",
+    "price": "1500000",
+    "discount_price": "1200000",
+    "sku": "TEST-SKU-001",
+    "barcode": "4823456789013"
+  },
+
+  "edit_data": {
+    "new_uz_name": "Yangilangan Mahsulot",
+    "new_ru_name": "Обновленный Продукт",
+    "new_uz_description": "Bu yangilangan mahsulot tavsifi yetarli uzunlikka ega bolishi kerak",
+    "new_ru_description": "Обновленное описание продукта достаточной длины для прохождения валидации",
+    "new_price": "2000000",
+    "new_discount_price": "1800000",
+    "new_sku": "UPD-SKU-002",
+    "new_barcode": "4823456789020"
+  },
+
+  "invalid_inputs": {
+    "xss_payload": "<script>alert('XSS')</script>",
+    "xss_event": "<img src=x onerror=alert('XSS')>",
+    "sql_injection": "'; DROP TABLE products; --",
+    "html_tags": "<b>Bold</b><iframe src='evil'></iframe>",
+    "special_chars": "!@#$%^&*()_+{}|:<>?",
+    "null_bytes": "test\u0000value",
+    "path_traversal": "../../../etc/passwd",
+    "command_injection": "; rm -rf /; echo ",
+    "ldap_injection": "*)(uid=*))(|(uid=*",
+    "unicode_emoji": "\ud83d\udce6\ud83d\uded2\ud83c\udfe0"
+  },
+
+  "boundary_values": {
+    "name": {
+      "empty": "",
+      "one_char": "A",
+      "short": "AB",
+      "max_255": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in repr",
+      "over_max_256": "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in repre"
+    },
+    "description": {
+      "empty": "",
+      "under_50": "Qisqa tavsif",
+      "exactly_50": "AAAAAAAAAABBBBBBBBBBCCCCCCCCCCDDDDDDDDDDEEEEEEEEEE",
+      "valid_long": "Bu mahsulot tavsifi yetarli uzunlikka ega bolishi kerak. Minimum 50 ta belgi talab qilinadi. Bu yetarli."
+    },
+    "price": {
+      "zero": "0",
+      "negative": "-1000",
+      "min_valid": "1",
+      "typical": "1500000",
+      "max": "9999999999",
+      "alpha": "abc",
+      "with_spaces": "1 500 000"
+    },
+    "sku": {
+      "empty": "",
+      "with_spaces": "SKU 001",
+      "special_chars": "!@#$%",
+      "valid": "TEST-SKU-001",
+      "long": "A-VERY-LONG-SKU-THAT-EXCEEDS-NORMAL-LENGTH-LIMITS-12345"
+    },
+    "barcode": {
+      "alpha": "ABCDEF",
+      "short": "123",
+      "valid_ean8": "12345678",
+      "valid_ean13": "4823456789013",
+      "too_long": "12345678901234567"
+    }
+  },
+
+  "whitespace_inputs": {
+    "only_spaces": "     ",
+    "tabs": "\t\t\t",
+    "newlines": "\n\n\n",
+    "nbsp": "\u00a0\u00a0\u00a0",
+    "leading_trailing": "  Test Product  ",
+    "multiple_spaces": "Test    Product    Name"
+  },
+
+  "price_discount_scenarios": {
+    "discount_greater": {
+      "price": "1000000",
+      "discount": "2000000"
+    },
+    "discount_equal": {
+      "price": "1000000",
+      "discount": "1000000"
+    },
+    "discount_zero": {
+      "price": "1000000",
+      "discount": "0"
+    },
+    "discount_negative": {
+      "price": "1000000",
+      "discount": "-500000"
+    }
+  }
+}

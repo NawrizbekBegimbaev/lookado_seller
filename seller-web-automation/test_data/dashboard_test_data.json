@@ -1,0 +1,14 @@
+{
+  "login_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+  "shops": {
+    "default_shop": "Zara"
+  },
+  "navigation_items": [
+    "Товары",
+    "Заказы",
+    "Возвраты"
+  ]
+}

@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test reports
+*.html
+assets/
+
+# Screenshots
+screenshots/
+*.png
+*.jpg
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Allure results (generated, uploaded to TestOps)
+allure-results/
+allure-report/
+
+# Pytest cache
+.pytest_cache/
+.cache/
+
+# Parallel execution lock files
+test_data/.auth_state.lock
+test_data/.auth_state.json
+
+# Allure
+allure-results/
+allurectl.exe
+allurectl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage
+.coverage
+htmlcov/
+
+# Environment variables
+.env
+!.env.example

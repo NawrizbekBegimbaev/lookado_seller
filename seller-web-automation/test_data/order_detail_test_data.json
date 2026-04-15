@@ -1,0 +1,153 @@
+{
+  "login_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+
+  "order_detail_url_pattern": "/dashboard/orders-management/orders/{order_id}",
+  "orders_list_url": "/dashboard/orders-management/orders?page=1&size=10",
+
+  "test_order_ids": {
+    "valid": "12345",
+    "invalid": "INVALID_ORDER_9999",
+    "nonexistent": "0",
+    "negative": "-1",
+    "very_large": "999999999999",
+    "special_chars": "ORD-<script>",
+    "sql_injection": "1' OR '1'='1",
+    "path_traversal": "../../../admin"
+  },
+
+  "expected_sections": {
+    "order_info": ["Order ID", "Status", "Date", "Total"],
+    "customer_info": ["Customer", "Phone", "Address"],
+    "products": ["Product", "Quantity", "Price", "Total"],
+    "payment": ["Payment Method", "Payment Status"],
+    "shipping": ["Shipping Method", "Tracking Number"]
+  },
+
+  "expected_statuses": [
+    "Awaiting Payment",
+    "Processing",
+    "Picking",
+    "Packed",
+    "Shipping",
+    "Shipped to Courier",
+    "Delivering",
+    "Delivered",
+    "Cancelled",
+    "Failed",
+    "Refunded",
+    "Expired"
+  ],
+
+  "expected_buttons": [
+    "Back",
+    "Update Status",
+    "Cancel Order",
+    "Refund",
+    "Print"
+  ],
+
+  "expected_tabs": [
+    "Details",
+    "History",
+    "Timeline",
+    "Products",
+    "Customer"
+  ],
+
+  "url_manipulation": {
+    "xss_in_url": "<script>alert(1)</script>",
+    "sql_in_url": "1' OR '1'='1",
+    "path_traversal": "../../../admin",
+    "null_bytes": "123\u0000456",
+    "negative_id": "-1",
+    "zero_id": "0",
+    "very_large_id": "999999999999999",
+    "special_chars": "!@#$%^&*()",
+    "unicode": "\ud83d\udce6\ud83d\uded2"
+  },
+
+  "security_payloads": {
+    "xss_script": "<script>alert('XSS')</script>",
+    "xss_event": "<img src=x onerror=alert('XSS')>",
+    "sql_injection": "'; DROP TABLE orders; --",
+    "html_injection": "<b>Bold</b><iframe src='evil'></iframe>",
+    "null_bytes": "test\u0000value",
+    "path_traversal": "../../../etc/passwd",
+    "command_injection": "; rm -rf /",
+    "ldap_injection": "*)(uid=*))(|(uid=*"
+  },
+
+  "empty_states": {
+    "no_products": "Order has no products",
+    "no_customer": "Customer information not available",
+    "no_tracking": "No tracking information"
+  },
+
+  "validation_messages": {
+    "order_not_found": "Order not found",
+    "access_denied": "Access denied",
+    "invalid_order_id": "Invalid order ID"
+  },
+
+  "navigation_scenarios": {
+    "from_orders_list": {
+      "description": "Navigate from orders list by clicking order",
+      "start_url": "/dashboard/orders-management/orders?page=1&size=10"
+    },
+    "direct_url": {
+      "description": "Navigate directly via URL",
+      "url_pattern": "/dashboard/orders-management/orders/{order_id}"
+    },
+    "back_button": {
+      "description": "Navigate back to orders list",
+      "expected_url": "/dashboard/orders-management/orders"
+    }
+  },
+
+  "concurrent_scenarios": {
+    "multiple_tabs": {
+      "description": "Open same order in multiple tabs",
+      "tabs_count": 2
+    },
+    "state_after_error": {
+      "description": "Page state after network error"
+    },
+    "long_idle": {
+      "description": "Order detail page after long idle",
+      "idle_time_ms": 60000
+    }
+  },
+
+  "robustness_scenarios": {
+    "refresh_page": {
+      "description": "Refresh order detail page"
+    },
+    "browser_back": {
+      "description": "Use browser back button"
+    },
+    "browser_forward": {
+      "description": "Use browser forward button"
+    },
+    "rapid_tab_switching": {
+      "description": "Rapidly switch between tabs",
+      "switch_count": 5
+    }
+  },
+
+  "accessibility": {
+    "focus_order": ["Back button", "Tab 1", "Tab 2", "Action button 1"],
+    "aria_labels": {
+      "back_button": "Back to orders",
+      "update_status": "Update order status",
+      "cancel_order": "Cancel this order"
+    }
+  },
+
+  "performance": {
+    "max_load_time_ms": 3000,
+    "max_tab_switch_time_ms": 500
+  }
+}

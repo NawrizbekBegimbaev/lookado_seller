@@ -1,0 +1,21 @@
+{
+  "endpoint": "https://greatmalldigital.testops.cloud",
+  "token": "${ALLURE_TOKEN}",
+  "project": "seller-web-automation",
+  "projectId": "36",
+  "launch": {
+    "name": "Seller Web Automated Tests - Build ${BUILD_NUMBER}",
+    "tags": [
+      "playwright",
+      "regression",
+      "staging"
+    ]
+  },
+  "results": {
+    "directory": "allure-results"
+  },
+  "upload": {
+    "retry": 3,
+    "timeout": 60000
+  }
+}

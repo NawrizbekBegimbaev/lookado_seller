@@ -1,0 +1,59 @@
+{
+  "login_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+  "search_scenarios": {
+    "invalid_return_id": {
+      "search_term": "INVALID99999XYZ",
+      "expected_results": 0
+    },
+    "product_name_search": {
+      "search_term": "test",
+      "description": "Search by product name pattern"
+    }
+  },
+  "filter_scenarios": {
+    "status_filters": [
+      "requested",
+      "approved",
+      "rejected",
+      "cancelled",
+      "completed"
+    ],
+    "status_tabs": {
+      "requested": ["Запрошен", "Requested"],
+      "approved": ["Одобрен", "Approved"],
+      "rejected": ["Отклонен", "Rejected"],
+      "cancelled": ["Отменен", "Cancelled"],
+      "completed": ["Завершен", "Completed"]
+    }
+  },
+  "security_test_data": {
+    "sql_injection": "'; DROP TABLE returns; --",
+    "xss_payload": "<script>alert('xss')</script>",
+    "command_injection": "; rm -rf / --no-preserve-root",
+    "ldap_injection": "*)(uid=*))(|(uid=*",
+    "null_byte": "test\u0000admin",
+    "path_traversal": "../../../etc/passwd",
+    "html_injection": "<img src=x onerror=alert(1)>",
+    "unicode_bypass": "\u202Etest\u202C"
+  },
+  "boundary_data": {
+    "min_search": "a",
+    "max_search": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "empty_search": "",
+    "only_spaces": "     ",
+    "special_chars": "!@#$%^&*()_+-=[]{}|;:',.<>?/"
+  },
+  "whitespace_data": {
+    "tabs": "\t\t\t",
+    "newlines": "\n\n\n",
+    "mixed_whitespace": " \t \n ",
+    "nbsp": "\u00A0\u00A0\u00A0",
+    "leading_trailing": "  test  "
+  },
+  "pagination": {
+    "items_per_page": 10
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "only_spaces": "     ",
+  "single_space": " ",
+  "tabs": "\t\t\t",
+  "single_tab": "\t",
+  "newlines": "\n\n\n",
+  "single_newline": "\n",
+  "nbsp": "\u00a0\u00a0\u00a0",
+  "single_nbsp": "\u00a0",
+  "leading_spaces": "   test",
+  "trailing_spaces": "test   ",
+  "leading_trailing": "   test   ",
+  "multiple_spaces": "test    multiple    spaces",
+  "tabs_around": "\ttest\t",
+  "newlines_in_text": "test\nwith\nnewlines",
+  "zero_width_space": "test\u200btest",
+  "rtl_override": "\u202etest",
+  "mixed_whitespace": " \t\n test \t\n ",
+  "carriage_return": "test\rvalue",
+  "form_feed": "test\fvalue",
+
+  "for_search": {
+    "only_spaces": "     ",
+    "tabs": "\t\t\t",
+    "newlines": "\n\n\n",
+    "nbsp": "\u00a0\u00a0\u00a0",
+    "leading_trailing": "  12345  ",
+    "multiple_spaces": "order    12345"
+  },
+
+  "for_names": {
+    "leading": "   Shop Name",
+    "trailing": "Shop Name   ",
+    "both": "   Shop Name   ",
+    "internal_multiple": "Shop     Name",
+    "tab_separated": "Shop\tName",
+    "newline_separated": "Shop\nName"
+  }
+}

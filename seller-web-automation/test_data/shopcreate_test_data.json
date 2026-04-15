@@ -1,0 +1,22 @@
+{
+  "valid_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+  "shop_data": {
+    "shop_name": "Test Shop Automation",
+    "description_uz": "Bu test uchun avtomatik yaratilgan do'kon",
+    "description_ru": "Магазин, созданный автоматически для тестирования"
+  },
+  "banners": {
+      "banner_shop": "test_data/resources/tv.png",
+      "logo_shop": "test_data/resources/img.png"
+  },
+
+  "expected_values": {
+    "slug_pattern": "^[a-z0-9-]+$",
+    "sku_pattern": "^[A-Z0-9_]+$",
+    "min_slug_length": 3,
+    "min_sku_length": 2
+  }
+}

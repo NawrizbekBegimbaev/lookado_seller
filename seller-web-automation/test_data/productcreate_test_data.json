@@ -1,0 +1,127 @@
+{
+  "valid_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+
+  "registered_shop_name": "Zara",
+
+  "valid_product": {
+    "category": {
+      "main": "Elektronika",
+      "sub": "Soatlar va elektron budilniklar",
+      "item": "Radio Uyg'otgichlar"
+    },
+    "ikpu": "Rediska (007060060010000000)",
+    "country": "Узбекистан",
+    "brand": "PET PRIDE",
+    "model": "PET PRIDE Model A",
+    "uz_name": "Тестовый продукт для животных",
+    "uz_description": "Премиальный корм для аквариумных рыб, улучшающий их окраску, активность и здоровье.",
+    "ru_name": "Тестовый продукт для питомцев",
+    "ru_description": "Высококачественный корм обеспечивает ежедневное полноценное питание для аквариумных рыб."
+  },
+
+  "valid_variant": {
+    "sku": "TEST1",
+    "quantity": "100",
+    "barcode": "1234567890123",
+    "price": "50000",
+    "discount_price": "45000",
+    "width": "300",
+    "length": "400",
+    "height": "200",
+    "weight": "1.5"
+  },
+
+  "staging": {
+    "credentials": {
+      "phone": "998001112233",
+      "password": "76543217"
+    },
+    "shop_name": "Zara",
+    "zara_jacket": {
+      "category_path": ["Kiyim", "Erkaklar uchun", "Ustki kiyim"],
+      "ikpu_search": "kurtkalar",
+      "country": "Turkiya",
+      "brand": "Zara",
+      "uz_name": "Zara Test Kurtka",
+      "uz_description": "Zara erkaklar uchun qishki kurtka. Yuqori sifatli material.",
+      "ru_name": "Zara Тестовая Куртка",
+      "ru_description": "Зимняя куртка Zara для мужчин. Высокое качество материала.",
+      "sku_prefix": "ZT",
+      "barcode": "4823456789012",
+      "price": "10",
+      "discount_price": "1",
+      "width": "550",
+      "length": "750",
+      "height": "60",
+      "weight": "0.8",
+      "image": "zara_jacket1.jpg"
+    },
+    "zara_hoodie": {
+      "category_path": ["Kiyim", "Erkaklar uchun", "Hoodies, Sweatshirts va Hoodies"],
+      "ikpu_search": "sviter",
+      "country": "Turkiya",
+      "brand": "Zara",
+      "uz_name": "Zara Test Hoodie",
+      "uz_description": "Zara erkaklar uchun hoodie. Yumshoq va issiq material.",
+      "ru_name": "Zara Тестовая Толстовка",
+      "ru_description": "Толстовка Zara для мужчин. Мягкий и теплый материал.",
+      "sku_prefix": "ZH",
+      "barcode": "4823456789013",
+      "price": "10",
+      "discount_price": "1",
+      "width": "500",
+      "length": "700",
+      "height": "50",
+      "weight": "0.6",
+      "image": "zara_jacket2.jpg"
+    },
+    "multi_product": {
+      "smartfon": {
+        "category_path": ["Elektronika", "Telefonlar va aqlli soatlar", "Smartfonlar"],
+        "ikpu_search": "telefon",
+        "country": "Xitoy",
+        "brand": "Samsung",
+        "model": "Samsung Model A",
+        "uz_name": "Test Smartfon Pro Max",
+        "uz_description": "Zamonaviy smartfon - yuqori sifatli AMOLED ekran, kuchli Snapdragon protsessor, 108MP kamera va 5000mAh batareya bilan jihozlangan.",
+        "ru_name": "Тестовый Смартфон Pro Max",
+        "ru_description": "Современный смартфон с качественным AMOLED дисплеем, мощным процессором Snapdragon, камерой 108МП и аккумулятором 5000mAh.",
+        "characteristics": {
+          "dropdowns": {
+            "Ekran turi": "AMOLED",
+            "Yangilanish chastotasi": "120 Hz",
+            "Ekran o'lchamlari": "Full HD+ (2400x1080)",
+            "Protsessor": "Qualcomm Snapdragon",
+            "Operativ xotira (RAM)": "8 GB",
+            "Tez quvvatlash": "67 Vt",
+            "SIM karta": "2 SIM (Dual SIM)",
+            "Bluetooth versiyasi": "Bluetooth 5.3",
+            "Optik zoom": "3x",
+            "Video yozish": "4K (2160p)"
+          },
+          "fields": {
+            "Ekran diagonali": "6.7",
+            "Asosiy kamera": "108",
+            "Frontal kamera": "32",
+            "Batareya sig'imi": "5000"
+          },
+          "checkboxes": ["Simsiz quvvatlash", "5G qo'llab-quvvatlash", "NFC"]
+        },
+        "variant_options": {
+          "Ichki xotira": ["128 GB", "256 GB"],
+          "Rang": ["Qora", "Oq"]
+        },
+        "bulk_fill": {
+          "sku": "TSM01",
+          "barcode_prefix": "482345",
+          "price": "100",
+          "discount_price": "10"
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,28 @@
+{
+  "login_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+  "tabs": {
+    "names": ["Available", "Upcoming", "Participated", "Not Participated", "Completed"],
+    "url_filters": {
+      "Available": "AVAILABLE",
+      "Upcoming": "UPCOMING",
+      "Participated": "PARTICIPATED",
+      "Not Participated": "NOT_PARTICIPATED",
+      "Completed": "COMPLETED"
+    }
+  },
+  "security": {
+    "xss_payloads": [
+      "<script>alert('XSS')</script>",
+      "<img src=x onerror=alert(1)>",
+      "javascript:alert(1)"
+    ],
+    "invalid_urls": [
+      "/dashboard/promotions/invalid-id-999",
+      "/dashboard/promotions/../../admin",
+      "/dashboard/promotions/<script>"
+    ]
+  }
+}

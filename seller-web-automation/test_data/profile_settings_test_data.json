@@ -1,0 +1,50 @@
+{
+  "login_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+  "profile": {
+    "company_name": "Test Company",
+    "phone": "+998901234567",
+    "email": "test@example.com"
+  },
+  "bank_account": {
+    "valid": {
+      "account_number": "20208000123456789012",
+      "bank_name": "Test Bank",
+      "mfo": "00123"
+    },
+    "invalid": {
+      "short": "123",
+      "letters": "abc123def456",
+      "special_chars": "2020!@#$%^&*()8000"
+    }
+  },
+  "settings": {
+    "language": "ru",
+    "vat_enabled": true
+  },
+  "security": {
+    "xss_payloads": [
+      "<script>alert('XSS')</script>",
+      "<img src=x onerror=alert(1)>",
+      "javascript:alert(1)"
+    ],
+    "sql_payloads": [
+      "'; DROP TABLE banks; --",
+      "1 OR 1=1",
+      "' UNION SELECT * FROM users --"
+    ],
+    "injection_payloads": [
+      {"name": "xss_script", "value": "<script>alert('XSS')</script>"},
+      {"name": "sql_injection", "value": "'; DROP TABLE banks; --"},
+      {"name": "null_byte", "value": "test\u0000injection"},
+      {"name": "path_traversal", "value": "../../../etc/passwd"},
+      {"name": "html_injection", "value": "<b>bold</b><a href='evil'>link</a>"}
+    ]
+  },
+  "navigation": {
+    "settings_path": "/dashboard/settings",
+    "profile_path": "/dashboard/profile"
+  }
+}

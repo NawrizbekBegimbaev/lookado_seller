@@ -1,0 +1,160 @@
+{
+  "search": {
+    "valid": {
+      "product_name": "Test Product",
+      "partial_name": "Test",
+      "sku": "SKU-12345",
+      "category": "Electronics"
+    },
+    "invalid": {
+      "nonexistent": "NONEXISTENT_PRODUCT_XYZ_999",
+      "special_chars": "!@#$%^&*()",
+      "xss": "<script>alert('XSS')</script>",
+      "sql_injection": "'; DROP TABLE products; --",
+      "html_injection": "<b>bold</b><img src=x onerror=alert(1)>",
+      "null_bytes": "test\u0000value",
+      "unicode": "\u0442\u0435\u0441\u0442 \ud83d\udce6",
+      "long_string": "a]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]",
+      "whitespace_only": "   ",
+      "tabs": "\t\t\t",
+      "newlines": "\n\n\n",
+      "ldap_injection": "*)(uid=*))(|(uid=*",
+      "command_injection": "; ls -la; rm -rf /",
+      "path_traversal": "../../../etc/passwd"
+    }
+  },
+  "filters": {
+    "status": {
+      "all": "All",
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "draft": "Draft"
+    },
+    "categories": [
+      "Electronics",
+      "Clothing",
+      "Home & Garden",
+      "Sports",
+      "Books"
+    ]
+  },
+  "pagination": {
+    "rows_per_page": [10, 25, 50, 100],
+    "default_rows": 10
+  },
+  "sorting": {
+    "columns": ["Name", "Price", "Status", "Created", "Updated"]
+  },
+  "urls": {
+    "products_list": "/dashboard/products",
+    "add_product": "/dashboard/products/add",
+    "create_single": "/dashboard/products/create",
+    "create_multi": "/dashboard/products/multi-create"
+  },
+  "ui": {
+    "expected_columns": [
+      "Product",
+      "Name",
+      "SKU",
+      "Price",
+      "Status",
+      "Stock",
+      "Actions"
+    ],
+    "page_title": "Products",
+    "page_title_uz": "Mahsulotlar",
+    "add_button_text": "Add Products",
+    "add_button_text_uz": "Mahsulot qo'shish"
+  },
+  "security": {
+    "xss_payloads": [
+      "<script>alert('XSS')</script>",
+      "<img src=x onerror=alert(1)>",
+      "<svg onload=alert(1)>",
+      "javascript:alert(1)",
+      "<body onload=alert(1)>",
+      "<iframe src='javascript:alert(1)'>",
+      "\" onmouseover=\"alert(1)\"",
+      "' onclick='alert(1)'"
+    ],
+    "sql_payloads": [
+      "' OR '1'='1",
+      "'; DROP TABLE products; --",
+      "1; SELECT * FROM users",
+      "1 UNION SELECT * FROM users",
+      "' OR 1=1 --",
+      "admin'--"
+    ],
+    "nosql_payloads": [
+      "{\"$gt\": \"\"}",
+      "{\"$ne\": null}",
+      "{\"$where\": \"1==1\"}"
+    ],
+    "command_payloads": [
+      "; ls -la",
+      "| cat /etc/passwd",
+      "$(whoami)",
+      "`id`",
+      "&& rm -rf /"
+    ]
+  },
+  "boundary": {
+    "min_length": 1,
+    "max_length": 255,
+    "very_long": 10000,
+    "empty": "",
+    "single_char": "a",
+    "max_chars": "a............................................................................................................................................................................................................................................................................"
+  },
+  "whitespace": {
+    "leading_spaces": "   test",
+    "trailing_spaces": "test   ",
+    "both_spaces": "   test   ",
+    "multiple_spaces": "test    multiple    spaces",
+    "tabs": "\ttest\t",
+    "newlines": "test\nwith\nnewlines",
+    "nbsp": "test\u00a0nbsp\u00a0test",
+    "zero_width": "test\u200btest",
+    "rtl_override": "\u202etest"
+  },
+  "credentials": {
+    "valid_user": {
+      "email": "nauri@gmail.com",
+      "password": "testtest"
+    },
+    "shop_name": "Zara"
+  },
+  "product_data": {
+    "sample": {
+      "name_uz": "Test Mahsulot",
+      "name_ru": "Тестовый Продукт",
+      "sku": "TEST-SKU-001",
+      "price": "100000",
+      "discount_price": "90000",
+      "stock": "50"
+    }
+  },
+  "toast_messages": {
+    "delete_success": "Product deleted successfully",
+    "delete_success_uz": "Mahsulot muvaffaqiyatli o'chirildi",
+    "delete_error": "Failed to delete product",
+    "bulk_delete_success": "Products deleted successfully"
+  },
+  "empty_state": {
+    "title": "No products",
+    "title_uz": "Mahsulotlar yo'q",
+    "description": "Add your first product to get started"
+  },
+  "accessibility": {
+    "aria_labels": {
+      "search": "Search products",
+      "filter": "Filter products",
+      "next_page": "Go to next page",
+      "prev_page": "Go to previous page",
+      "edit": "Edit",
+      "delete": "Delete",
+      "view": "View"
+    }
+  }
+}

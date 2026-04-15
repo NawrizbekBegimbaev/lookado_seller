@@ -1,0 +1,15 @@
+{
+  "valid_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+  "invalid_email": "+998 1@gmail.com",
+  "short_password": "123",
+  "wrong_password": "wrongpassword123",
+  "error_messages": {
+    "invalid_phone": "Enter a valid phone number",
+    "short_password": "Password must be at least 8 characters",
+    "invalid_credentials": "Invalid phone number or password"
+  },
+  "registration_url": "https://dev-seller.greatmall.uz/auth/registration"
+}

@@ -1,0 +1,62 @@
+{
+  "login_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+  "employee_data": {
+    "name": "Test Employee",
+    "phone": "+998 90 950 49 60",
+    "role": "Finance Manager"
+  },
+  "employee_data1": {
+    "name": "Test Employee",
+    "phone": "+998 91 600 60 94",
+    "role": "Manager"
+  },
+  "employee_data2": {
+    "name": "Test Employee",
+    "phone": "+998 88 123 45 67",
+    "role": "Content Manager"
+  },
+  "employee_data3": {
+    "name": "Test Employee",
+    "phone": "+998 93 245 66 11",
+    "role": "Marketer"
+  },
+  "employees": [
+    {"phone": "+998 90 950 49 60", "role": "Finance Manager"},
+    {"phone": "+998 91 600 60 94", "role": "Manager"},
+    {"phone": "+998 88 123 45 67", "role": "Content Manager"}
+  ],
+  "search": {
+    "valid_query": "test",
+    "no_results_query": "XYZNONEXISTENT99999",
+    "injection_payloads": [
+      {"name": "xss_script", "value": "<script>alert('XSS')</script>"},
+      {"name": "sql_injection", "value": "'; DROP TABLE staff; --"},
+      {"name": "null_byte", "value": "test\u0000injection"},
+      {"name": "path_traversal", "value": "../../../etc/passwd"}
+    ]
+  },
+  "invalid_phones": [
+    {"name": "empty", "value": ""},
+    {"name": "letters", "value": "abcdefgh"},
+    {"name": "too_short", "value": "+998 90"},
+    {"name": "special_chars", "value": "!@#$%^&*()"},
+    {"name": "xss_phone", "value": "<script>alert(1)</script>"},
+    {"name": "sql_phone", "value": "' OR '1'='1"}
+  ],
+  "security": {
+    "xss_payloads": [
+      "<script>alert('XSS')</script>",
+      "<img src=x onerror=alert(1)>",
+      "javascript:alert(1)"
+    ],
+    "injection_payloads": [
+      {"payload": "'; DROP TABLE staff; --", "type": "SQL injection"},
+      {"payload": "; rm -rf /", "type": "Command injection"},
+      {"payload": "*)(uid=*", "type": "LDAP injection"},
+      {"payload": "../../../etc/passwd", "type": "Path traversal"}
+    ]
+  }
+}

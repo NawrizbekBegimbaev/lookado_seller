@@ -1,0 +1,51 @@
+{
+  "login_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+  "shop": {
+    "name": "Zara",
+    "slug": "zara",
+    "sku": "ZARA001",
+    "description_uz": "Test do'kon tavsifi",
+    "description_ru": "Тестовое описание магазина"
+  },
+  "valid_inputs": {
+    "description": "Valid description for testing purposes",
+    "name": "Test Shop Name"
+  },
+  "invalid_inputs": {
+    "empty": "",
+    "whitespace_only": "   ",
+    "too_long": "A very long description that exceeds the maximum allowed length for this field. This text should be rejected by the validation system if there is a maximum length limit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "special_chars": "!@#$%^&*()_+{}|:<>?",
+    "with_tabs": "Description\twith\ttabs",
+    "with_newlines": "Description\nwith\nnewlines"
+  },
+  "security": {
+    "xss_payloads": [
+      "<script>alert('XSS')</script>",
+      "<img src=x onerror=alert(1)>",
+      "javascript:alert(1)",
+      "<svg onload=alert(1)>"
+    ],
+    "sql_payloads": [
+      "'; DROP TABLE shops; --",
+      "1 OR 1=1",
+      "' UNION SELECT * FROM users --"
+    ],
+    "injection_payloads": [
+      {"name": "xss_script", "value": "<script>alert('XSS')</script>"},
+      {"name": "sql_injection", "value": "'; DROP TABLE shops; --"},
+      {"name": "null_byte", "value": "test\u0000injection"},
+      {"name": "path_traversal", "value": "../../../etc/passwd"},
+      {"name": "html_injection", "value": "<b>bold</b><a href='evil'>link</a>"},
+      {"name": "command_injection", "value": "; rm -rf /"},
+      {"name": "ldap_injection", "value": "*)(uid=*)"}
+    ]
+  },
+  "navigation": {
+    "settings_path": "/dashboard/shop/settings",
+    "shop_list_path": "/dashboard/shop"
+  }
+}

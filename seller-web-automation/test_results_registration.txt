@@ -1,0 +1,61 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/n.begimbayevgreatmall.uz/Downloads/auto/seller-web-automation/venv/bin/python3
+cachedir: .pytest_cache
+metadata: {'Python': '3.9.6', 'Platform': 'macOS-26.2-arm64-arm-64bit', 'Packages': {'pytest': '8.4.2', 'pluggy': '1.6.0'}, 'Plugins': {'order': '1.3.0', 'anyio': '4.12.1', 'html': '4.1.1', 'xdist': '3.8.0', 'metadata': '3.1.1', 'dependency': '0.6.0', 'allure-pytest': '2.13.5', 'base-url': '2.1.0', 'playwright': '0.7.1'}, 'Base URL': ''}
+rootdir: /Users/n.begimbayevgreatmall.uz/Downloads/auto/seller-web-automation
+configfile: pytest.ini
+plugins: order-1.3.0, anyio-4.12.1, html-4.1.1, xdist-3.8.0, metadata-3.1.1, dependency-0.6.0, allure-pytest-2.13.5, base-url-2.1.0, playwright-0.7.1
+collecting ... collected 40 items
+
+tests/test_registration.py::TestRegistrationSmoke::test_form_elements_visible PASSED [  2%]
+tests/test_registration.py::TestRegistrationSmoke::test_valid_registration_reaches_otp FAILED [  5%]
+tests/test_registration.py::TestRegistrationSmoke::test_login_link_navigation FAILED [  7%]
+tests/test_registration.py::TestRegistrationValidation::test_empty_field_validation[all] PASSED [ 10%]
+tests/test_registration.py::TestRegistrationValidation::test_empty_field_validation[name] PASSED [ 12%]
+tests/test_registration.py::TestRegistrationValidation::test_empty_field_validation[phone] PASSED [ 15%]
+tests/test_registration.py::TestRegistrationValidation::test_empty_field_validation[email] PASSED [ 17%]
+tests/test_registration.py::TestRegistrationValidation::test_empty_field_validation[password] PASSED [ 20%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_name_rejected[numbers] PASSED [ 22%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_name_rejected[special-chars] PASSED [ 25%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_name_rejected[too-short] PASSED [ 27%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_name_rejected[too-long] PASSED [ 30%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_name_rejected[whitespace] PASSED [ 32%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_phone_rejected[too-short] PASSED [ 35%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_phone_rejected[too-long] PASSED [ 37%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_phone_rejected[letters] PASSED [ 40%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_phone_rejected[special-chars] PASSED [ 42%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_phone_rejected[whitespace] PASSED [ 45%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_email_rejected[no-at] PASSED [ 47%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_email_rejected[no-domain] PASSED [ 50%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_email_rejected[spaces] PASSED [ 52%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_email_rejected[too-long] PASSED [ 55%]
+tests/test_registration.py::TestRegistrationValidation::test_invalid_email_rejected[whitespace] PASSED [ 57%]
+tests/test_registration.py::TestRegistrationValidation::test_password_length_boundary[7-chars-error] PASSED [ 60%]
+tests/test_registration.py::TestRegistrationValidation::test_password_length_boundary[8-chars-ok] PASSED [ 62%]
+tests/test_registration.py::TestRegistrationValidation::test_password_length_boundary[9-chars-ok] PASSED [ 65%]
+tests/test_registration.py::TestRegistrationValidation::test_password_visibility_toggle PASSED [ 67%]
+tests/test_registration.py::TestRegistrationSecurity::test_https_connection PASSED [ 70%]
+tests/test_registration.py::TestRegistrationSecurity::test_injection_in_name_field[sql] PASSED [ 72%]
+tests/test_registration.py::TestRegistrationSecurity::test_injection_in_name_field[xss] FAILED [ 75%]
+tests/test_registration.py::TestRegistrationSecurity::test_injection_in_name_field[html] PASSED [ 77%]
+tests/test_registration.py::TestRegistrationSecurity::test_injection_in_name_field[null-byte] PASSED [ 80%]
+tests/test_registration.py::TestRegistrationSecurity::test_injection_in_name_field[command] PASSED [ 82%]
+tests/test_registration.py::TestRegistrationSecurity::test_injection_in_name_field[path-traversal] PASSED [ 85%]
+tests/test_registration.py::TestRegistrationSecurity::test_password_not_in_url PASSED [ 87%]
+tests/test_registration.py::TestRegistrationSecurity::test_duplicate_phone_rejected PASSED [ 90%]
+tests/test_registration.py::TestRegistrationOTP::test_otp_modal_appears FAILED [ 92%]
+tests/test_registration.py::TestRegistrationOTP::test_otp_has_4_input_fields SKIPPED [ 95%]
+tests/test_registration.py::TestRegistrationOTP::test_invalid_otp_shows_error SKIPPED [ 97%]
+tests/test_registration.py::TestRegistrationOTP::test_back_from_otp_returns_to_form SKIPPED [100%]
+
+=================================== FAILURES ===================================
+/Users/n.begimbayevgreatmall.uz/Downloads/auto/seller-web-automation/tests/test_registration.py:69: AssertionError: BUG: Form submission produced no response (no OTP, no error, no redirect)
+/Users/n.begimbayevgreatmall.uz/Downloads/auto/seller-web-automation/tests/test_registration.py:77: AssertionError: Login link missing
+/Users/n.begimbayevgreatmall.uz/Downloads/auto/seller-web-automation/tests/test_registration.py:249: AssertionError: BUG: xss payload rendered in page (XSS vulnerability)
+/Users/n.begimbayevgreatmall.uz/Downloads/auto/seller-web-automation/tests/test_registration.py:315: AssertionError: BUG: No OTP modal or response after valid form submission
+=========================== short test summary info ============================
+FAILED tests/test_registration.py::TestRegistrationSmoke::test_valid_registration_reaches_otp
+FAILED tests/test_registration.py::TestRegistrationSmoke::test_login_link_navigation
+FAILED tests/test_registration.py::TestRegistrationSecurity::test_injection_in_name_field[xss]
+FAILED tests/test_registration.py::TestRegistrationOTP::test_otp_modal_appears
+============= 4 failed, 33 passed, 3 skipped in 108.22s (0:01:48) ==============

@@ -1,0 +1,52 @@
+{
+  "login_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+  "status_tabs": ["All", "New", "Moderation", "Processed", "Rejected"],
+  "statistics_cards": ["New", "With Responses", "Waiting Response", "My Rating"],
+  "grid_columns": ["Product", "Date & Time", "Status", "Rating", "Review"],
+  "search": {
+    "valid_query": "Samsung",
+    "no_results_query": "XYZNONEXISTENT99999",
+    "empty_query": "",
+    "injection_payloads": [
+      {"name": "xss_script", "value": "<script>alert('XSS')</script>"},
+      {"name": "sql_injection", "value": "'; DROP TABLE reviews; --"},
+      {"name": "null_byte", "value": "test\u0000injection"},
+      {"name": "path_traversal", "value": "../../../etc/passwd"}
+    ]
+  },
+  "filters": {
+    "date_from": "01-01-2025",
+    "date_to": "31-12-2025",
+    "invalid_date": "99-99-9999"
+  },
+  "security": {
+    "xss_payloads": [
+      "<script>alert('XSS')</script>",
+      "<img src=x onerror=alert(1)>",
+      "javascript:alert(1)"
+    ],
+    "sql_payloads": [
+      "'; DROP TABLE reviews; --",
+      "1 OR 1=1",
+      "' UNION SELECT * FROM users --"
+    ],
+    "command_injection": [
+      "; rm -rf /",
+      "| cat /etc/passwd",
+      "$(whoami)"
+    ],
+    "ldap_injection": [
+      "*)(uid=*",
+      "*()|%26'",
+      "admin)(&)"
+    ],
+    "path_traversal": [
+      "../../../etc/passwd",
+      "..\\..\\..\\windows\\system32",
+      "%2e%2e%2f%2e%2e%2fetc%2fpasswd"
+    ]
+  }
+}

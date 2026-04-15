@@ -1,0 +1,109 @@
+{
+  "xss_payloads": {
+    "script_tags": [
+      "<script>alert('XSS')</script>",
+      "<script>alert(document.cookie)</script>",
+      "<script>alert(\"XSS\")</script>"
+    ],
+    "event_handlers": [
+      "<img src=x onerror=alert(1)>",
+      "<img src=x onerror=alert('XSS')>",
+      "<svg onload=alert(1)>",
+      "<body onload=alert(1)>",
+      "<div onmouseover='alert(1)'>Hover</div>",
+      "\" onmouseover=\"alert(1)\"",
+      "' onclick='alert(1)'"
+    ],
+    "javascript_uri": [
+      "javascript:alert('XSS')",
+      "javascript:alert(document.cookie)",
+      "javascript:alert(1)"
+    ],
+    "iframe_tags": [
+      "<iframe src='javascript:alert(1)'>",
+      "<iframe src=\"javascript:alert(1)\">",
+      "<iframe src='evil'></iframe>"
+    ],
+    "svg_xss": [
+      "<svg onload=alert(1)>Test",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" onload=\"alert('XSS')\">"
+    ]
+  },
+
+  "sql_injection": {
+    "drop_table": [
+      "'; DROP TABLE users; --",
+      "'; DROP TABLE products; --",
+      "'; DROP TABLE shops; --",
+      "'; DROP TABLE orders; --",
+      "'; DROP TABLE staff; --",
+      "Robert'); DROP TABLE users;--"
+    ],
+    "boolean_based": [
+      "' OR '1'='1",
+      "' OR 1=1 --"
+    ],
+    "union_select": [
+      "1 UNION SELECT * FROM users--",
+      "' UNION SELECT * FROM users --",
+      "1 UNION SELECT * FROM users"
+    ],
+    "comment_based": [
+      "admin'--",
+      "1; SELECT * FROM users"
+    ]
+  },
+
+  "command_injection": [
+    "; rm -rf /",
+    "; rm -rf / #",
+    "; rm -rf / ; echo 'pwned'",
+    "| cat /etc/passwd",
+    "; ls -la",
+    "$(whoami)",
+    "`id`",
+    "&& rm -rf /"
+  ],
+
+  "ldap_injection": [
+    "*)(uid=*))(|(uid=*",
+    "*)(uid=*"
+  ],
+
+  "path_traversal": [
+    "../../../etc/passwd",
+    "../../etc/passwd"
+  ],
+
+  "null_byte_injection": [
+    "test\u0000injection",
+    "user\u0000admin",
+    "Test\u0000Product",
+    "test\u0000value"
+  ],
+
+  "nosql_injection": [
+    "{\"$gt\": \"\"}",
+    "{\"$ne\": null}",
+    "{\"$where\": \"1==1\"}"
+  ],
+
+  "html_injection": [
+    "<b>Bold</b><img src=x><iframe src='evil'></iframe>",
+    "<b>bold</b><img src=x onerror=alert(1)>",
+    "<marquee>test</marquee>"
+  ],
+
+  "all_common": [
+    "<script>alert('XSS')</script>",
+    "<img src=x onerror=alert(1)>",
+    "javascript:alert('XSS')",
+    "'; DROP TABLE users; --",
+    "' OR '1'='1",
+    "1 UNION SELECT * FROM users--",
+    "; rm -rf /",
+    "*)(uid=*))(|(uid=*",
+    "../../../etc/passwd",
+    "test\u0000value"
+  ]
+}

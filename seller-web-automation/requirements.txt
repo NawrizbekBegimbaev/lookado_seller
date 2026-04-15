@@ -1,0 +1,30 @@
+# Core testing framework
+pytest==8.4.2
+pytest-playwright==0.7.1
+playwright==1.51.0
+
+# API automation
+httpx==0.28.1
+pydantic==2.10.4
+pydantic-settings==2.7.0
+email-validator==2.2.0
+
+# Allure reporting and TestOps integration
+allure-pytest==2.13.5
+allure-python-commons==2.13.5
+
+# HTML reporting (optional - for local reports)
+pytest-html==4.1.1
+pytest-metadata==3.1.1
+
+# Environment variables
+python-dotenv==1.0.1
+
+# Parallel execution
+pytest-xdist>=3.5.0
+filelock==3.16.1
+
+# Additional plugins
+pytest-order==1.3.0
+pytest-dependency==0.6.0
+pytest-base-url==2.1.0

@@ -1,0 +1,82 @@
+{
+  "login_credentials": {
+    "email": "998001112233",
+    "password": "76543217"
+  },
+
+  "orders_url": "/dashboard/orders-management/orders",
+  "orders_url_with_params": "/dashboard/orders-management/orders?page=1&size=10",
+
+  "expected_tabs": [
+    "All", "Awaiting Payment", "Processing", "Delivering",
+    "Delivered", "Cancelled", "Failed", "Refunded",
+    "Picking", "Packed", "Shipping", "Shipped to Courier", "Expired"
+  ],
+
+  "expected_columns": [
+    "Order ID", "Product", "Status", "Date", "Quantity", "Price (sum)", "Total (sum)"
+  ],
+
+  "expected_widgets": [
+    "Ordering", "Pending payment", "Picking", "Issued", "Delivering"
+  ],
+
+  "search_scenarios": {
+    "valid_order_id": "12345",
+    "invalid_order_id": "ZZZINVALID99999",
+    "customer_name": "test",
+    "product_name": "Product",
+    "promotion_code": "PROMO2024"
+  },
+
+  "invalid_search": {
+    "xss_payload": "<script>alert('XSS')</script>",
+    "xss_event": "<img src=x onerror=alert('XSS')>",
+    "sql_injection": "'; DROP TABLE orders; --",
+    "html_tags": "<b>Bold</b><iframe src='evil'></iframe>",
+    "special_chars": "!@#$%^&*()_+{}|:<>?",
+    "null_bytes": "test\u0000value",
+    "path_traversal": "../../../etc/passwd",
+    "command_injection": "; rm -rf /; echo ",
+    "ldap_injection": "*)(uid=*))(|(uid=*",
+    "unicode_emoji": "\ud83d\udce6\ud83d\uded2\ud83c\udfe0",
+    "very_long": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+
+  "date_filter": {
+    "valid_from": "01-01-2024",
+    "valid_to": "31-12-2025",
+    "invalid_date": "99-99-9999",
+    "future_date": "01-01-2030",
+    "past_date": "01-01-2020",
+    "reversed_range": {
+      "from": "31-12-2025",
+      "to": "01-01-2024"
+    }
+  },
+
+  "pagination": {
+    "sizes": [10, 25, 50, 100],
+    "default_size": 10
+  },
+
+  "url_manipulation": {
+    "negative_page": "?page=-1&size=10",
+    "zero_page": "?page=0&size=10",
+    "huge_page": "?page=999999&size=10",
+    "invalid_size": "?page=1&size=-5",
+    "zero_size": "?page=1&size=0",
+    "string_params": "?page=abc&size=xyz",
+    "xss_in_url": "?page=1&size=10&q=<script>alert(1)</script>",
+    "sql_in_url": "?page=1&size=10&q=' OR 1=1 --"
+  },
+
+  "whitespace_inputs": {
+    "only_spaces": "     ",
+    "tabs": "\t\t\t",
+    "newlines": "\n\n\n",
+    "nbsp": "\u00a0\u00a0\u00a0",
+    "leading_trailing": "  12345  ",
+    "multiple_spaces": "order    12345"
+  }
+}
